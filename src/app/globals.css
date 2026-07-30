@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Midnight Obsidian + Crimson Cyber Mesh Palette */
+  --bg-main: #06080F;
+  --bg-card: rgba(15, 20, 32, 0.78);
+  --bg-card-hover: rgba(22, 28, 44, 0.88);
+  --bg-card-glossy: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --bg-modal: rgba(10, 14, 22, 0.95);
+
+  --border-white-light: rgba(255, 255, 255, 0.08);
+  --border-white-medium: rgba(255, 255, 255, 0.16);
+  --border-crimson: rgba(255, 46, 85, 0.35);
+  --border-white-glossy: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
+
+  --crimson-primary: #FF2E55;
+  --crimson-hover: #E11D48;
+  --crimson-dark: #881337;
+  --crimson-glow: rgba(255, 46, 85, 0.35);
+  --crimson-soft-bg: rgba(255, 46, 85, 0.1);
+
+  --text-white: #FFFFFF;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: Georgia, 'Times New Roman', 'Plus Jakarta Sans', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  --shadow-glossy: 0 20px 40px -15px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  --shadow-crimson: 0 10px 25px -5px rgba(255, 46, 85, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Headings Typography System: Playfair Display */
+h1, h2, h3, h4, h5, h6, .font-heading, .font-old-english {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+/* App Container Layout */
+.app-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtle Grid Background Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 46, 85, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 46, 85, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient Radial Crimson Glow Lights */
+body::after {
+  content: '';
+  position: fixed;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1100px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(255, 46, 85, 0.16) 0%, rgba(255, 46, 85, 0.03) 40%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Bottom Glow Light */
+.cyber-glow-bottom {
+  position: fixed;
+  bottom: -200px;
+  right: -100px;
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.1) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--crimson-primary);
+}
+
+/* Glassmorphic Dark Obsidian Containers */
+.glossy-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-white-light);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.75), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glossy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+  opacity: 0.8;
+}
+
+.glossy-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-crimson);
+  box-shadow: 0 22px 45px -10px rgba(0, 0, 0, 0.85), 0 0 20px rgba(255, 46, 85, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Primary Crimson Action Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #FF2E55 0%, #E11D48 100%);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  box-shadow: var(--shadow-crimson);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #FF456A 0%, #F43F5E 100%);
+  box-shadow: 0 12px 28px rgba(255, 46, 85, 0.45);
+  transform: translateY(-1.5px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-white-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Crimson Badges & Indicators */
+.badge-red {
+  background: rgba(255, 46, 85, 0.1);
+  color: var(--crimson-primary);
+  border: 1px solid rgba(255, 46, 85, 0.3);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--crimson-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--crimson-primary);
+  animation: pulseGlow 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 46, 85, 0.7);
+  }
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 8px rgba(255, 46, 85, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 46, 85, 0);
+  }
+}
+
+/* Custom Input & Textarea Fields */
+.input-glossy {
+  width: 100%;
+  background: rgba(12, 16, 26, 0.85);
+  border: 1px solid var(--border-white-medium);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.input-glossy:focus {
+  border-color: var(--crimson-primary);
+  background: rgba(16, 22, 34, 0.95);
+  box-shadow: 0 0 0 3px rgba(255, 46, 85, 0.2);
+}
+
+.input-glossy::placeholder {
+  color: #64748B;
+}
+
+/* Code Editor Window */
+.code-editor {
+  background: #080A0F;
+  border: 1px solid var(--border-white-medium);
+  border-radius: var(--radius-md);
+  color: #F8FAFC;
+  font-family: var(--font-mono);
+  padding: 18px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Gradient Text Effect */
+.text-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-crimson {
+  background: linear-gradient(135deg, #FF2E55 0%, #E11D48 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Moving Marquee Tagline Animation */
+@keyframes marqueeSlide {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animated-tagline-container {
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 360px;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.animated-tagline-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  animation: marqueeSlide 14s linear infinite;
+}
+
+.animated-tagline-track:hover {
+  animation-play-state: paused;
+}
