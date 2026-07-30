@@ -1,5 +1,11 @@
 # 🛡️ BugPay — Anonymous TEE Bug Bounty Protocol
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-https%3A%2F%2Fbugpay.vercel.app-FF2E55?style=for-the-badge&logo=vercel)](https://bugpay.vercel.app)
+[![Ethereum Sepolia](https://img.shields.io/badge/Network-Ethereum%20Sepolia-blue?style=for-the-badge&logo=ethereum)](https://sepolia.etherscan.io)
+[![iExec Nox TEE](https://img.shields.io/badge/TEE%20Enclave-iExec%20Nox-green?style=for-the-badge)](https://docs.iex.ec)
+
+🔗 **Live Production URL**: [https://bugpay.vercel.app](https://bugpay.vercel.app)
+
 **BugPay** is an anonymous, confidential bug bounty platform built for Web3 DAOs and smart contract protocols. Powered by **iExec Nox TEE (Trusted Execution Environment) Hardware Enclaves** and **EIP-191 Safe Multisig Governance** on **Ethereum Sepolia Testnet**.
 
 ---
