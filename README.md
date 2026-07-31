@@ -1,6 +1,7 @@
 # 🛡️ BugPay — Anonymous TEE Bug Bounty Protocol
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-https%3A%2F%2Fbugpay.vercel.app-FF2E55?style=for-the-badge&logo=vercel)](https://bugpay.vercel.app)
+[![Demo Video](https://img.shields.io/badge/Demo%20Video-X%2F%20Twitter-1DA1F2?style=for-the-badge&logo=x)](https://x.com/rexkillz_/status/2083143260453654775?s=20)
 [![Ethereum Sepolia](https://img.shields.io/badge/Network-Ethereum%20Sepolia-blue?style=for-the-badge&logo=ethereum)](https://sepolia.etherscan.io)
 [![iExec Nox TEE](https://img.shields.io/badge/TEE%20Enclave-iExec%20Nox%20SGX-green?style=for-the-badge)](https://docs.iex.ec)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -8,6 +9,7 @@
 **BugPay** is an anonymous, confidential bug bounty platform built for Web3 DAOs and smart contract protocols. Powered by **iExec Nox TEE (Trusted Execution Environment) Hardware Enclaves** and **EIP-191 Safe Multisig Governance** on **Ethereum Sepolia Testnet**.
 
 🔗 **Live Production URL**: [https://bugpay.vercel.app](https://bugpay.vercel.app)  
+🎥 **Demo Video (X/Twitter)**: [https://x.com/rexkillz_/status/2083143260453654775?s=20](https://x.com/rexkillz_/status/2083143260453654775?s=20)  
 🌐 **GitHub Repository**: [https://github.com/RexEth070/bugpay](https://github.com/RexEth070/bugpay)
 
 ---
@@ -129,6 +131,7 @@ npm run start
 - **Hackathon**: DoraHacks WTF Hackathon  
 - **Track**: Confidential Compute & Privacy Systems / Web3 Infrastructure  
 - **Live Demo**: [https://bugpay.vercel.app](https://bugpay.vercel.app)  
+- **Demo Video**: [https://x.com/rexkillz_/status/2083143260453654775?s=20](https://x.com/rexkillz_/status/2083143260453654775?s=20)  
 - **GitHub Repo**: [https://github.com/RexEth070/bugpay](https://github.com/RexEth070/bugpay)  
 
 ---
